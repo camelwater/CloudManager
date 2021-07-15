@@ -1,7 +1,7 @@
 "use strict";
 
 
-const { runWorkflow } = require("./github-api")
+const { runWorkflow } = require("./github-api");
 
 module.exports.createVM = async (name, group, vnet, subnet, image) => {
     const workflow_file = "CW3-DEMO-CREATE";

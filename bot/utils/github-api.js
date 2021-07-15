@@ -1,6 +1,6 @@
 "use strict";
 
-const { Octokit } = require("@octokit/core")
+const { Octokit } = require("@octokit/core");
 const octokit = new Octokit({ auth: `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` });
 
 module.exports.runWorkflow = async(workflow_file, inputs) => {
@@ -12,4 +12,4 @@ module.exports.runWorkflow = async(workflow_file, inputs) => {
         inputs: inputs
     });
     return response;
-}
+};

@@ -5,7 +5,7 @@ const {
     stopVM, 
     startVM,
     deleteVM
-} = require("./vm-workflows")
+} = require("./vm-workflows");
 // const { getVMS , getRunningVMS } = require("./get-vms");
 
 const valid_commands = ['start', 'stop', 'delete', 'create'];
@@ -18,7 +18,8 @@ module.exports.actOnMessage = async (context) => {
     const params = message.split(" ");
 
     if (params.length<1)
-        return await context.sendActivity("Please include a command.");
+        // return await context.sendActivity("Please include a command.");
+        return;
 
     const commandType = params[0].toLocaleLowerCase();
     params.splice(0,1);
@@ -121,5 +122,6 @@ module.exports.actOnMessage = async (context) => {
     }
     else{
         await context.sendActivity("That is not a valid command. Valid commands: " + valid_commands.join(", "));
+        return;
     }
-}
+};
