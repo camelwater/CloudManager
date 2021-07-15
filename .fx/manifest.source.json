@@ -1,0 +1,78 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.9/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.9",
+    "version": "1.0.0",
+    "id": "{appid}",
+    "packageName": "com.microsoft.teams.extension",
+    "developer": {
+        "name": "CW",
+        "websiteUrl": "{baseUrl}",
+        "privacyUrl": "{baseUrl}/index.html#/privacy",
+        "termsOfUseUrl": "{baseUrl}/index.html#/termsofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Cloud Manager",
+        "full": "Cloud Manager"
+    },
+    "description": {
+        "short": "Cloud management straight from Microsoft Teams.",
+        "full": "Cloud management."
+    },
+    "accentColor": "#FFFFFF",
+    "bots": [
+        {
+            "botId": "{botId}",
+            "scopes": [
+                "personal",
+                "team",
+                "groupchat"
+            ],
+            "supportsFiles": false,
+            "isNotificationOnly": false,
+            "commandLists": [
+                {
+                    "scopes": [
+                        "personal",
+                        "team",
+                        "groupchat"
+                    ],
+                    "commands": [
+                        {
+                            "title": "create",
+                            "description": "create a virtual machine. Usage: create [VM-Name] [Resource-Group] [V-net] [Sub-net] [image]"
+                        },
+                        {
+                            "title": "delete",
+                            "description": "delete a virtual machine. Usage: delete [VM-Name] [Resource-Group]"
+                        },
+                        {
+                            "title": "start",
+                            "description": "start a stopped virtual machine. Usage: start [VM-name] [Resource-Group]"
+                        },
+                        {
+                            "title": "stop",
+                            "description": "stop a running virtual machine. Usage: stop [VM-name] [Resource-Group]"
+                        }
+                          
+                    ]
+                }
+            ]
+        }
+    ],
+    "composeExtensions": [],
+    "configurableTabs": [],
+    "staticTabs": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [],
+    "webApplicationInfo": {
+        "id": "{appClientId}",
+        "resource": "{webApplicationInfoResource}"
+    }
+}

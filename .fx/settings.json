@@ -1,0 +1,20 @@
+{
+    "appName": "CloudManager",
+    "projectId": "0b97e93f-2b77-4fda-8f59-869c9b9bfd81",
+    "currentEnv": "default",
+    "solutionSettings": {
+        "name": "fx-solution-azure",
+        "version": "1.0.0",
+        "hostType": "Azure",
+        "capabilities": [
+            "Bot",
+            "MessagingExtension"
+        ],
+        "azureResources": [],
+        "activeResourcePlugins": [
+            "fx-resource-local-debug",
+            "fx-resource-bot",
+            "fx-resource-aad-app-for-teams"
+        ]
+    }
+}
