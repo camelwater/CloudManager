@@ -1,4 +1,5 @@
 node_modules
-/.fx/*.env
-/.fx/*.userdata
+# /.fx/*.env
+# /.fx/*.userdata
+/.fx
 .DS_Store
