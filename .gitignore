@@ -1,5 +1,5 @@
 node_modules
-# /.fx/*.env
-# /.fx/*.userdata
+/bot/images
+/bot/README.md
 /.fx
 .DS_Store
