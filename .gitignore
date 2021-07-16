@@ -1,5 +1,5 @@
 node_modules
-/bot/images
-/bot/README.md
+bot/images
+bot/README.md
 /.fx
 .DS_Store
