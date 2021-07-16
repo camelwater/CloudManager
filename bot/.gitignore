@@ -2,7 +2,9 @@
 node_modules/
 
 # misc
+images/
+utils/tokens.json
 .env
 .deployment
-utils/tokens.json
 .DS_Store
+README.md
