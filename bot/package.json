@@ -18,7 +18,9 @@
     "@octokit/core": "^3.5.1",
     "botbuilder": "~4.11.0",
     "botbuilder-dialogs": "~4.11.0",
+    "custom-env": "^2.0.1",
     "isomorphic-fetch": "^3.0.0",
+    "path": "^0.12.7",
     "restify": "~8.5.1"
   },
   "devDependencies": {

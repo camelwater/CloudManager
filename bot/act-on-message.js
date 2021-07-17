@@ -8,7 +8,7 @@ const {
     restartVM,
     deallocateVM,
     showVM
-} = require("./vm-workflows");
+} = require("./github-utils/vm-workflows");
 // const { getVMS , getRunningVMS } = require("./get-vms");
 
 const valid_commands = ['start', 'stop', 'delete', 'create', 'restart', 'deallocate', 'show'];

@@ -4,7 +4,7 @@ node_modules/
 # misc
 images/
 utils/tokens.json
-.env
+.env.azure
 .deployment
 .DS_Store
 README.md

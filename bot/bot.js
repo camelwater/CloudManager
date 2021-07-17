@@ -11,7 +11,7 @@ const {
     ConsoleTranscriptLogger,
 } = require('botbuilder');
 const TextEncoder = require('util').TextEncoder;
-const { actOnMessage } = require("./utils/act-on-message");
+const { actOnMessage } = require("./act-on-message");
 
 class Bot extends TeamsActivityHandler {
     constructor() {
