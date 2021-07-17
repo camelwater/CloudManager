@@ -6,7 +6,8 @@ const {
     startVM,
     deleteVM,
     restartVM,
-    deallocateVM
+    deallocateVM,
+    showVM
 } = require("./vm-workflows");
 // const { getVMS , getRunningVMS } = require("./get-vms");
 
