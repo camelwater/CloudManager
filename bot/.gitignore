@@ -3,7 +3,8 @@ node_modules/
 
 # misc
 images/
-utils/tokens.json
+github-utils/tokens.json
+azure/azure_creds.json
 .env.azure
 .deployment
 .DS_Store
