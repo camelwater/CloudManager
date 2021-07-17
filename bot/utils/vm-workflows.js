@@ -42,3 +42,30 @@ module.exports.startVM = async (name, group) => {
     return runWorkflow(workflow_file, inputs);
 };
 
+module.exports.restartVM = async (name, group) => {
+    const workflow_file = "CW3-DEMO-RESTART";
+    const inputs = {
+        "vm_name": name,
+        "resource_group": group
+    };
+    return runWorkflow(workflow_file, inputs);
+};
+
+module.exports.deallocateVM = async (name, group) => {
+    const workflow_file = "CW3-DEMO-DEALLOCATE";
+    const inputs = {
+        "vm_name": name,
+        "resource_group": group
+    };
+    return runWorkflow(workflow_file, inputs);
+};
+
+module.exports.showVM = async (name, group) => {
+    const workflow_file = "CW3-DEMO-SHOW";
+    const inputs = {
+        "vm_name": name, 
+        "resource_group": group
+    };
+    return runWorkflow(workflow_file, inputs);
+}
+

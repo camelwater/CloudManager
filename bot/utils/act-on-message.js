@@ -4,11 +4,13 @@ const {
     createVM,
     stopVM, 
     startVM,
-    deleteVM
+    deleteVM,
+    restartVM,
+    deallocateVM
 } = require("./vm-workflows");
 // const { getVMS , getRunningVMS } = require("./get-vms");
 
-const valid_commands = ['start', 'stop', 'delete', 'create'];
+const valid_commands = ['start', 'stop', 'delete', 'create', 'restart', 'deallocate', 'show'];
 
 module.exports.actOnMessage = async (context) => {
     const message = context.activity.text.trim();
@@ -120,8 +122,70 @@ module.exports.actOnMessage = async (context) => {
         const resp = await stopVM(name, group);
         await context.sendActivity("GitHub API response status: " + String(resp.status) + (resp.status===204 ? " (Normal)" : " (Error)"))
     }
+    else if(commandType === "restart"){
+        const usage = "**Usage:** restart [VM-name] [Resource-Group]"
+
+        if (params.length < 1)
+            return await context.sendActivity("Here's how to use this command:\n\n" + usage);
+        if(params.length < 2)
+            return await context.sendActivity("You are missing required arguments.\n\n" + usage);
+        // if (params.length < 2)
+        //     return await context.sendActivity(getRunningVMS(vNet));
+        const name = params[0];
+        const group = params[1];
+
+        await context.sendActivity(
+            "**Restarting VM instance**:" + 
+            `\n\nName: ${name}` +
+            `\n\nin resource group: ${group}` 
+        );
+        const resp = await restartVM(name, group);
+        await context.sendActivity("GitHub API response status: " + String(resp.status) + (resp.status===204 ? " (Normal)" : " (Error)"))
+
+    }
+    else if(commandType === "deallocate"){
+        const usage = "**Usage:** deallocate [VM-name] [Resource-Group]"
+
+        if (params.length < 1)
+            return await context.sendActivity("Here's how to use this command:\n\n" + usage);
+        if(params.length < 2)
+            return await context.sendActivity("You are missing required arguments.\n\n" + usage);
+        // if (params.length < 2)
+        //     return await context.sendActivity(getRunningVMS(vNet));
+        const name = params[0];
+        const group = params[1];
+
+        await context.sendActivity(
+            "**Deallocating VM instance**:" + 
+            `\n\nName: ${name}` +
+            `\n\nin resource group: ${group}` 
+        );
+        const resp = await deallocateVM(name, group);
+        await context.sendActivity("GitHub API response status: " + String(resp.status) + (resp.status===204 ? " (Normal)" : " (Error)"))
+    }
+    else if (commandType === "show"){
+        const usage = "**Usage:** show [VM-name] [Resource-Group]"
+
+        if (params.length < 1)
+            return await context.sendActivity("Here's how to use this command:\n\n" + usage);
+        if(params.length < 2)
+            return await context.sendActivity("You are missing required arguments.\n\n" + usage);
+        // if (params.length < 2)
+        //     return await context.sendActivity(getRunningVMS(vNet));
+        const name = params[0];
+        const group = params[1];
+
+        await context.sendActivity(
+            "**Retrieving VM instance details**:" + 
+            `\n\nName: ${name}` +
+            `\n\nin resource group: ${group}` 
+        );
+        const resp = await showVM(name, group);
+        await context.sendActivity("GitHub API response status: " + String(resp.status) + (resp.status===204 ? " (Normal)" : " (Error)"))
+    }
     else{
         await context.sendActivity("That is not a valid command. Valid commands: " + valid_commands.join(", "));
         return;
     }
+    
 };
