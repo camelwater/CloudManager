@@ -60,12 +60,5 @@ module.exports.deallocateVM = async (name, group) => {
     return runWorkflow(workflow_file, inputs);
 };
 
-module.exports.showVM = async (name, group) => {
-    const workflow_file = "CW3-DEMO-SHOW";
-    const inputs = {
-        "vm_name": name, 
-        "resource_group": group
-    };
-    return runWorkflow(workflow_file, inputs);
-}
+
 

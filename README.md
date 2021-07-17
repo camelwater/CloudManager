@@ -13,10 +13,11 @@ Cloud Manager is a user-friendly cloud infrastructure management and operation t
 - [x] Show GitHub API status to the user and the details of their command.
 - [x] Support for other virtual machine commands, such as restarting and deallocation.
 - [ ] Show the GitHub workflow's status upon completion or failure.
+- [ ] Azure SDK integration
 - [ ] Return the Azure command's status back to the user upon completion or failure.
 
 ### Version 2.0
-> More user-friendly messaging-extention based bot with greater functionality beyond VMs.
+> More user-friendly messaging-extention based bot with greater cloud functionality.
 - [ ] Bot utilises messaging-extention feature of Microsoft Teams.
 - [ ] Users can select what operation they want to execute.
 - [ ] Users can select from lists the required information and parameters of their Azure operation.

@@ -181,8 +181,7 @@ module.exports.actOnMessage = async (context) => {
             `\n\nName: ${name}` +
             `\n\nin resource group: ${group}` 
         );
-        const resp = await showVM(name, group);
-        await context.sendActivity("GitHub API response status: " + String(resp.status) + (resp.status===204 ? " (Normal)" : " (Error)"))
+        // TODO: implement Azure SDK
     }
     else{
         await context.sendActivity("That is not a valid command. Valid commands: " + valid_commands.join(", "));
