@@ -50,7 +50,7 @@ module.exports.createRG = async(name, location, tags) => {
 };
 
 module.exports.createVNET = async(resourceGroup, name, params) => {
-    const params = params!==null ? params: {
+    const par = params!==null ? params : {
         location: location,
         addressSpace: {
         addressPrefixes: ['10.0.0.0/16']
@@ -63,6 +63,6 @@ module.exports.createVNET = async(resourceGroup, name, params) => {
     const credentials = msRestAzure.loginWithServicePrincipalSecret(clientID, secret, tenantID);
     const computeClient = new ComputeManagementClient(credentials, subscriptionID);
 
-    return await computeClient.virtualNetworks.createOrUpdate(resourceGroup, name, params);
+    return await computeClient.virtualNetworks.createOrUpdate(resourceGroup, name, par);
   
 };

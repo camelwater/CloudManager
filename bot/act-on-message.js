@@ -186,7 +186,7 @@ module.exports.actOnMessage = async (context) => {
         );
         const res = await showVM(name, group);
         await context.deleteActivity(sentID.id);
-        await context.sendActivity(`**${ name }** in **${ group }** details:\n\n` + JSON.stringify(res, { space: 4 }));
+        await context.sendActivity(`**${ name }** in **${ group }** details:\n\n` + JSON.stringify(res, null, 4));
     }
     else{
         await context.sendActivity("That is not a valid command. Valid commands: " + valid_commands.join(", "));
