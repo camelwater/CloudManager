@@ -1,6 +1,5 @@
 "use strict";
 
-
 const { runWorkflow } = require("./github-api");
 
 module.exports.createVM = async (name, group, vnet, subnet, image) => {

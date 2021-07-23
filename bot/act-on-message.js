@@ -7,8 +7,12 @@ const {
     deleteVM,
     restartVM,
     deallocateVM,
-    showVM
 } = require("./github-utils/vm-workflows");
+
+const { 
+    showVM, 
+    listVMs
+} = require("./azure/azure-api")
 // const { getVMS , getRunningVMS } = require("./get-vms");
 
 const valid_commands = ['start', 'stop', 'delete', 'create', 'restart', 'deallocate', 'show'];
@@ -171,17 +175,18 @@ module.exports.actOnMessage = async (context) => {
             return await context.sendActivity("Here's how to use this command:\n\n" + usage);
         if(params.length < 2)
             return await context.sendActivity("You are missing required arguments.\n\n" + usage);
-        // if (params.length < 2)
-        //     return await context.sendActivity(getRunningVMS(vNet));
+        
         const name = params[0];
         const group = params[1];
 
-        await context.sendActivity(
+        let sentID = await context.sendActivity(
             "**Retrieving VM instance details**:" + 
             `\n\nName: ${name}` +
             `\n\nin resource group: ${group}` 
         );
-        // TODO: implement Azure SDK
+        const res = await showVM(name, group);
+        await context.deleteActivity(sentID.id);
+        await context.sendActivity(`**${ name }** in **${ group }** details:\n\n` + JSON.stringify(res, { space: 4 }));
     }
     else{
         await context.sendActivity("That is not a valid command. Valid commands: " + valid_commands.join(", "));

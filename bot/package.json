@@ -13,13 +13,21 @@
     "watch": "nodemon ./index.js"
   },
   "dependencies": {
+    "@azure/arm-compute": "^16.2.0",
+    "@azure/arm-network": "^25.1.0",
+    "@azure/arm-resources": "^4.2.0",
+    "@azure/arm-storage": "^16.1.0",
+    "@azure/ms-rest-nodeauth": "^3.0.10",
     "@microsoft/microsoft-graph-client": "^2.2.1",
     "@microsoft/teamsfx": "^0.1.0",
     "@octokit/core": "^3.5.1",
+    "async": "^2.6.3",
+    "azure-arm-compute": "^10.0.0",
     "botbuilder": "~4.11.0",
     "botbuilder-dialogs": "~4.11.0",
     "custom-env": "^2.0.1",
     "isomorphic-fetch": "^3.0.0",
+    "ms-rest-azure": "^3.0.0",
     "path": "^0.12.7",
     "restify": "~8.5.1"
   },

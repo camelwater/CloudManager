@@ -1,6 +1,4 @@
 "use strict";
-require('custom-env').env('')
-console.log("HELLO"+process.env.TEST)
 
 const tokens = require('./tokens.json')
 const { Octokit } = require("@octokit/core");
