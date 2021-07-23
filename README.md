@@ -12,8 +12,8 @@ Cloud Manager is a user-friendly cloud infrastructure management and operation t
 - [x] GitHub actions executes the user's command in Azure.
 - [x] Show GitHub API status to the user and the details of their command.
 - [x] Support for other virtual machine commands, such as restarting and deallocation.
+- [x] Azure SDK integration
 - [ ] Show the GitHub workflow's status upon completion or failure.
-- [ ] Azure SDK integration
 - [ ] Return the Azure command's status back to the user upon completion or failure.
 
 ### Version 2.0
