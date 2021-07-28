@@ -1,6 +1,7 @@
 # Cloud Manager
 
-Cloud Manager is a user-friendly cloud infrastructure management and operation tool integrated directly into Microsoft Teams.
+Cloud Manager is a user-friendly cloud infrastructure management and operation tool integrated directly into Microsoft Teams. \
+By executing some simple commands or using Microsoft Teams's messaging extension feature, anyone can quickly and easily manage their Azure environments without ever leaving Teams.
 
 ## Roadmap
 
