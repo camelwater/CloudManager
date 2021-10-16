@@ -49,6 +49,14 @@ module.exports.createRG = async(name, location, tags) => {
     
 };
 
+module.exports.deleteRG = async(name) => {
+    // const response = https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}?api-version=2021-04-01
+    const credentials = await msRestAzure.loginWithServicePrincipalSecret(clientID, secret, tenantID);
+    const resourceClient = new ResourceManagementClient(credentials, subscriptionID);
+
+    return await resourceClient.resourceGroups.beginDeleteMethod(name);
+}
+
 module.exports.createVNET = async(resourceGroup, name, params) => {
     const par = params!==null ? params : {
         location: location,
