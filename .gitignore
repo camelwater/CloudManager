@@ -1,3 +1,9 @@
 .fx
 .DS_Store
 permissions.json
+.fx/configs/localSettings.json
+.fx/subscriptionInfo.json
+build
+**/.env.teamsfx.local
+.fx/states/*.userdata
+.backup

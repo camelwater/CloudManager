@@ -1,0 +1,97 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.9/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.9",
+    "version": "1.5.1",
+    "id": "{{localSettings.teamsApp.teamsAppId}}",
+    "packageName": "com.microsoft.teams.extension",
+    "developer": {
+        "name": "CW",
+        "websiteUrl": "{{{localSettings.frontend.tabEndpoint}}}",
+        "privacyUrl": "{{{localSettings.frontend.tabEndpoint}}}/index.html#/privacy",
+        "termsOfUseUrl": "{{{localSettings.frontend.tabEndpoint}}}/index.html#/termsofuse"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "Cloud Manager-local-debug",
+        "full": "Cloud Manager-local-debug"
+    },
+    "description": {
+        "short": "Cloud management straight from Microsoft Teams.",
+        "full": "Cloud management."
+    },
+    "accentColor": "#FFFFFF",
+    "bots": [
+        {
+            "botId": "{{localSettings.bot.botId}}",
+            "scopes": [
+                "personal",
+                "team",
+                "groupchat"
+            ],
+            "supportsFiles": false,
+            "isNotificationOnly": false,
+            "commandLists": [
+                {
+                    "scopes": [
+                        "personal",
+                        "team",
+                        "groupchat"
+                    ],
+                    "commands": [
+                        {
+                            "title": "vm create",
+                            "description": "create a virtual machine. Usage: vm create [VM-Name] [Resource-Group] [V-net] [Sub-net] [image]"
+                        },
+                        {
+                            "title": "vm delete",
+                            "description": "delete a virtual machine. Usage: vm delete [VM-Name] [Resource-Group]"
+                        },
+                        {
+                            "title": "vm start",
+                            "description": "start a stopped virtual machine. Usage: vm start [VM-name] [Resource-Group]"
+                        },
+                        {
+                            "title": "vm stop",
+                            "description": "stop a running virtual machine. Usage: vm stop [VM-name] [Resource-Group]"
+                        },
+                        {
+                            "title": "vm restart",
+                            "description": "restart a running virtual machine. Usage: vm restart [VM-name] [Resource-Group]"
+                        },
+                        {
+                            "title": "vm deallocate",
+                            "description": "deallocate a virtual machine. Usage: vm deallocate [VM-name] [Resource-Group]"
+                        },
+                        {
+                            "title": "vm show",
+                            "description": "show details of a virtual machine. Usage: vm show [VM-name] [Resource-Group]"
+                        },
+                        {
+                            "title": "rg create",
+                            "description": "show details of a virtual machine. Usage: rg create [RG-name] [location]"
+                        },
+                        {
+                            "title": "rg delete",
+                            "description": "show details of a virtual machine. Usage: rg delete [RG-name]"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "composeExtensions": [],
+    "configurableTabs": [],
+    "staticTabs": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": [],
+    "webApplicationInfo": {
+        "id": "{{localSettings.auth.clientId}}",
+        "resource": "{{{localSettings.auth.applicationIdUris}}}"
+    }
+}
