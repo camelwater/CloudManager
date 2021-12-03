@@ -18,7 +18,7 @@ By executing some simple commands or using Microsoft Teams's messaging extension
 - [ ] Return the Azure command's status back to the user upon completion or failure.
 
 ### Version 2.0
-> More user-friendly card based bot with greater cloud functionality.
+> More user-friendly card-based bot with greater cloud functionality.
 - [x] Expanded support for other cloud services, such as resource groups and policies.
 - [ ] Bot utilises Microsoft Teams's cards.
 - [ ] Users can select what operation they want to execute or type it in chronologically.
